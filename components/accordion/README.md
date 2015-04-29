@@ -40,9 +40,15 @@
 </x>
 ```
 
-- `[is-expanded]` the state hook that is toggled according to the expanded or collapsed state of the **Trigger** and **Target** elements.
-- `id` attribute, "x" = 1 then increment by 1 for each **Trigger** and **Target** e.g. `id="accordion-trigger-1"`, `id="accordion-target-1"`.
-- `tabindex="[-1/0]"`, default is `tabindex="-1"`, when **Target** is expanded change to `tabindex="0"`.
+- `[is-expanded]` is the state hook that is toggled according to the expanded or collapsed state of the accordion item, by default and when collapsed the hook isn't applied, when expanded then append `is-expanded` to both the **Trigger** and **Target** elements.
+- ARIA attributes having the values 'true' or 'false' are toggled according to the expanded or collapsed state of the accordion item:
+  - **Trigger:** `aria-selected` and `aria-expanded` by default and when collapsed is 'false', when expanded is 'true'.
+  - **Target:** `aria-hidden` by default and when collapsed is 'true', when expanded is 'false'.
+- The `id` attributes where the "x" is concerned should equal '1' then increment by 1 for each accordion item **Trigger** and **Target** elements e.g. 
+  - Item 1: `id="accordion-trigger-1"` / `id="accordion-target-1"`
+  - Item 2: `id="accordion-trigger-2"` / `id="accordion-target-2"`
+  - Item 3: `id="accordion-trigger-3"` / `id="accordion-target-3"`
+- The `tabindex` attribute for the **Trigger** element by default and when collapsed is `tabindex="-1"`, when expanded is `tabindex="0"`.
 
 
 
@@ -80,48 +86,52 @@ The kitchen sink: [Keyboard interaction](http://www.w3.org/TR/wai-aria-practices
 </tr>
 <tr>
 <th scope="row">Focusable</th>
-<td>Can you get to the control via the keyboard? Refer to <a href="http://www.w3.org/WAI/PF/aria-practices/#kbd_focus">Providing Keyboard Focus</a></td>
-<td>[ ]</td>
+<td>Can you get to the control via the keyboard? 
+<br>Refer to <a href="http://www.w3.org/WAI/PF/aria-practices/#kbd_focus">Providing Keyboard Focus</a></td>
+<td></td>
 </tr>
 <tr>
 <th scope="row">Operable</th>
-<td>Can you use the control with the keyboard? Refer to <a href="http://www.w3.org/WAI/PF/aria-practices/#keyboard">Keyboard Navigation</a></td>
-<td>[ ]</td>
+<td>Can you use the control with the keyboard?
+<br>Refer to <a href="http://www.w3.org/WAI/PF/aria-practices/#keyboard">Keyboard Navigation</a></td>
+<td></td>
 </tr>
 <tr>
 <th scope="row">Expected operation</th>
-<td>Can you use the standard keys for the control type to operate it. Refer to <a href="http://www.w3.org/WAI/PF/aria-practices/#aria_ex"><abbr title="Accessible Rich Internet Applications">ARIA</abbr> Widget Design Patterns</a></td>
-<td>[ ]</td>
+<td>Can you use the standard keys for the control type to operate it. 
+<br>Refer to <a href="http://www.w3.org/WAI/PF/aria-practices/#aria_ex"><abbr title="Accessible Rich Internet Applications">ARIA</abbr> Widget Design Patterns</a></td>
+<td></td>
 </tr>
 <tr>
 <th scope="row">Clear indication of focus</th>
-<td>Can you easily see it when the control has focus? Refer to <a href="http://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-focus-visible.html">Visible Focus</a> (WCAG2)</td>
-<td>[ ]</td>
+<td>Can you easily see it when the control has focus?
+<br>Refer to <a href="http://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-focus-visible.html">Visible Focus</a> (WCAG2)</td>
+<td></td>
 </tr>
 <tr>
 <th scope="row">Label</th>
 <td>The control has a text label that is exposed as an <a href="http://www.w3.org/TR/wai-aria/terms#def_accessible_name">accessible name</a> in <a href="http://rawgit.com/w3c/aria/master/html-aam/html-aam.html#introduction-accessibility-apis">accessibility APIs</a></td>
-<td>[ ]</td>
+<td></td>
 </tr>
 <tr>
 <th scope="row">Role</th>
 <td>The control has an appropriate role exposed in <a href="http://rawgit.com/w3c/aria/master/html-aam/html-aam.html#introduction-accessibility-apis">accessibility APIs</a></td>
-<td>[ ]</td>
+<td></td>
 </tr>
 <tr>
 <th scope="row">States and properties</th>
 <td>The control has any UI states and properties that it has exposed in <a href="http://rawgit.com/w3c/aria/master/html-aam/html-aam.html#introduction-accessibility-apis">accessibility APIs</a></td>
-<td>[ ]</td>
+<td></td>
 </tr>
 <tr>
 <th scope="row">Color contrast</th>
 <td> The control label/description/icon is perceivable/usable for low vision users (Use a <a href="http://www.paciellogroup.com/resources/contrastanalyser/">color contrast checker</a>.)</td>
-<td>[ ]</td>
+<td></td>
 </tr>
 <tr>
 <th scope="row">High contrast mode</th>
 <td>The control is perceivable/usable when High Contrast Mode is enabled (e.g. <a href="http://www.paciellogroup.com/blog/2010/01/high-contrast-proof-css-sprites/">Windows HC mode</a>)</td>
-<td>[ ]</td>
+<td></td>
 </tr>
 </tbody>
 </table>
