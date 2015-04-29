@@ -46,7 +46,7 @@
 ```
 
 - `[is-expanded]` the state hook that is toggled according to the expanded or collapsed state of the **Trigger** and **Target** elements.
-- `id` attribute, "x" = 1 then increment by 1 for each **Trigger** and **Target** e.g. `id="accordion-trigger-1`, `id="accordion-target-1`.
+- `id` attribute, "x" = 1 then increment by 1 for each **Trigger** and **Target** e.g. `id="accordion-trigger-1"`, `id="accordion-target-1"`.
 - `tabindex="[-1/0]"`, default is `tabindex="-1"`, when **Target** is expanded change to `tabindex="0"`.
 
 ### Keyboard interaction
