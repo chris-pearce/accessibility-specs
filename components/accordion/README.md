@@ -40,7 +40,7 @@
 </x>
 ```
 
-- `[is-expanded]` is the state hook that is toggled according to the expanded or collapsed state of the accordion item, by default and when collapsed the hook isn't applied, when expanded then append `is-expanded` to both the **Trigger** and **Target** elements.
+- `[is-expanded]` is the state hook that is toggled according to the expanded or collapsed state of the accordion item, by default and when collapsed the hook isn't applied, when expanded append `is-expanded` to both the **Trigger** and **Target** elements.
 - ARIA attributes having the values 'true' or 'false' are toggled according to the expanded or collapsed state of the accordion item:
   - **Trigger:** `aria-selected` and `aria-expanded` by default and when collapsed is 'false', when expanded is 'true'.
   - **Target:** `aria-hidden` by default and when collapsed is 'true', when expanded is 'false'.
