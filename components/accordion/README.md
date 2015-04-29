@@ -1,16 +1,24 @@
 # Accordion
 
+
+
+
 ## Description
 
 > An accordion component is a collection of expandable panels associated with a common outer container. Panels consist of a header and an associated content region or panel. The primary use of an Accordion is to present multiple sections of content on a single page without scrolling, where all of the sections are peers in the application or object hierarchy. The general look is similar to a tree where each root tree node is an expandable accordion header. The user navigates and makes the contents of each panel visible (or not) by interacting with the Accordion Header.
 <br>
 —<http://www.w3.org/TR/wai-aria-practices/#accordion>
 
+
+
+
 ## Terminology
 
-- **Container:** the containing element wrapping all accordion items.
-- **Trigger:** the accordion item label and control that expands and collapses its corresponding **Target**.
-- **Target:** the containing element wrapping the content associated with the **Trigger**.
+- **Container**—the containing element wrapping all accordion items.
+- **Trigger**—the accordion item label and control that expands and collapses its corresponding **Target**.
+- **Target**—the containing element wrapping the content associated with the **Trigger**.
+
+
 
 ## Markup
 
@@ -36,6 +44,9 @@
 - `id` attribute, "x" = 1 then increment by 1 for each **Trigger** and **Target** e.g. `id="accordion-trigger-1"`, `id="accordion-target-1"`.
 - `tabindex="[-1/0]"`, default is `tabindex="-1"`, when **Target** is expanded change to `tabindex="0"`.
 
+
+
+
 ## Keyboard interaction
 
 The accordion takes up one tab stop in the tab order. It can be navigated with the following shortcuts:
@@ -48,9 +59,75 @@ The accordion takes up one tab stop in the tab order. It can be navigated with t
 
 The kitchen sink: [Keyboard interaction](http://www.w3.org/TR/wai-aria-practices/#accordion).
 
+
+
+
 ## No JavaScript
 
 [TODO]
+
+
+
+
+## Checklist
+
+<table>
+<tbody>
+<tr>
+<th scope="col" style="text-align: left;">Consideration</th>
+<th scope="col" style="text-align: left;">Description</th>
+<th scope="col" style="text-align: left;">Yes/No/N.A.</th>
+</tr>
+<tr>
+<th scope="row">Focusable</th>
+<td>Can you get to the control via the keyboard? Refer to <a href="http://www.w3.org/WAI/PF/aria-practices/#kbd_focus">Providing Keyboard Focus</a></td>
+<td>[ ]</td>
+</tr>
+<tr>
+<th scope="row">Operable</th>
+<td>Can you use the control with the keyboard? Refer to <a href="http://www.w3.org/WAI/PF/aria-practices/#keyboard">Keyboard Navigation</a></td>
+<td>[ ]</td>
+</tr>
+<tr>
+<th scope="row">Expected operation</th>
+<td>Can you use the standard keys for the control type to operate it. Refer to <a href="http://www.w3.org/WAI/PF/aria-practices/#aria_ex"><abbr title="Accessible Rich Internet Applications">ARIA</abbr> Widget Design Patterns</a></td>
+<td>[ ]</td>
+</tr>
+<tr>
+<th scope="row">Clear indication of focus</th>
+<td>Can you easily see it when the control has focus? Refer to <a href="http://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-focus-visible.html">Visible Focus</a> (WCAG2)</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<th scope="row">Label</th>
+<td>The control has a text label that is exposed as an <a href="http://www.w3.org/TR/wai-aria/terms#def_accessible_name">accessible name</a> in <a href="http://rawgit.com/w3c/aria/master/html-aam/html-aam.html#introduction-accessibility-apis">accessibility APIs</a></td>
+<td>[ ]</td>
+</tr>
+<tr>
+<th scope="row">Role</th>
+<td>The control has an appropriate role exposed in <a href="http://rawgit.com/w3c/aria/master/html-aam/html-aam.html#introduction-accessibility-apis">accessibility APIs</a></td>
+<td>[ ]</td>
+</tr>
+<tr>
+<th scope="row">States and properties</th>
+<td>The control has any UI states and properties that it has exposed in <a href="http://rawgit.com/w3c/aria/master/html-aam/html-aam.html#introduction-accessibility-apis">accessibility APIs</a></td>
+<td>[ ]</td>
+</tr>
+<tr>
+<th scope="row">Color contrast</th>
+<td> The control label/description/icon is perceivable/usable for low vision users (Use a <a href="http://www.paciellogroup.com/resources/contrastanalyser/">color contrast checker</a>.)</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<th scope="row">High contrast mode</th>
+<td>The control is perceivable/usable when High Contrast Mode is enabled (e.g. <a href="http://www.paciellogroup.com/blog/2010/01/high-contrast-proof-css-sprites/">Windows HC mode</a>)</td>
+<td>[ ]</td>
+</tr>
+</tbody>
+</table>
+
+
+
 
 ## Examples
 
