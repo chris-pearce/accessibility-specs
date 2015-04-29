@@ -12,9 +12,9 @@ It covers things like:
 - What should happen when JavaScript is disabled.
 - Examples where available.
 
-And will include UI components such as:
+And will include components such as:
 
-- [Accordion](ui-components/accordion/README.md)
+- [Accordion](components/accordion/README.md)
 - Autocomplete
 - Carousel
 - Datepicker
@@ -30,8 +30,8 @@ label appropriately. Or create a
 
 ## Contents
 
-- [UI components](ui-components)
-  - [Accordion](ui-components/accordion/README.md)
+- [Components](components)
+  - [Accordion](components/accordion/README.md)
 
 ## Noteworthy
 
