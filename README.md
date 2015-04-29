@@ -32,7 +32,7 @@
 ```html
 <x class="js-accordion">
   <x class="js-accordion-trigger">[...]</x>
-  <x class="js-accordion-trigger">[...]</x>
+  <x class="js-accordion-target">[...]</x>
 </x>
 ```
 
@@ -41,7 +41,7 @@
 ```html
 <x class="js-accordion" role="tablist" aria-multiselectable="true">
   <x class="js-accordion-trigger [is-expanded]" id="[accordion-trigger-x]" aria-controls="[id-of-'js-accordion-trigger']" aria-selected="[true/false]" aria-expanded="[true/false]" tabindex="[-1/0]" role="tab">[...]</x>
-  <x class="js-accordion-trigger [is-expanded]" id="[accordion-target-x]" aria-labelledby="[id-of-'js-accordion-target']" aria-hidden="[true/false]" role="tabpanel">[...]</x>
+  <x class="js-accordion-target [is-expanded]" id="[accordion-target-x]" aria-labelledby="[id-of-'js-accordion-target']" aria-hidden="[true/false]" role="tabpanel">[...]</x>
 </x>
 ```
 
