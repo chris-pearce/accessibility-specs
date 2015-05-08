@@ -1,4 +1,4 @@
-# Accordion
+# Menu Button
 
 
 
@@ -29,79 +29,73 @@ When presenting the menu, ensure that it is completely visible on screen.
 **No JavaScript**
 
 ```html
-<div class="js-menubutton">
-  <a class="js-menubutton-trigger" href="[id-of-'js-accordion-trigger']">[...]</a>
-  <x class="js-menubutton-target">[...]</x>
+<div class="js-menu-button">
+  <a class="js-menu-button-trigger" href="[id-of-'js-accordion-target']" aria-haspopup="true">[...]</a>
+  <div class="js-menu-button-target" id="menu-button-target-1">
+    <ul role="menu">
+      <li role="presentation">
+        <a href="[url]" role="menuitem">[...]</a>
+      </li>
+      <li role="presentation">
+        <a href="[url]" role="menuitem">[...]</a>
+      </li>
+      [...]
+    </ul>
+  </div>
 </div>
 ```
 
 **With JavaScript**
 
 ```html
-<x class="js-accordion" role="tablist" aria-multiselectable="true">
-  <x class="js-accordion-trigger [is-expanded]" id="[accordion-trigger-x]" aria-controls="[id-of-'js-accordion-trigger']" aria-selected="[true/false]" aria-expanded="[true/false]" tabindex="[-1/0]" role="tab">[...]</x>
-  <x class="js-accordion-target [is-expanded]" id="[accordion-target-x]" aria-labelledby="[id-of-'js-accordion-target']" aria-hidden="[true/false]" role="tabpanel">[...]</x>
-</x>
+<div class="js-menu-button [is-visible]">
+  <a class="js-menu-button-trigger [is-visible]" href="[id-of-'js-menu-button-target']" aria-expanded="[true/false]" role="button">[...]</a>
+  <div class="js-menu-button-target [is-visible]" aria-hidden="[true/false]" id="menu-button-target-x">
+    <ul role="menu">
+      <li role="presentation">
+        <a href="[url]" role="menuitem" tabindex="-1">[...]</a>
+      </li>
+      <li role="presentation">
+        <a href="[url]" role="menuitem" tabindex="-1">[...]</a>
+      </li>
+      [...]
+    </ul>
+  </div>
+</div>
 ```
 
-- `[is-expanded]` is the state hook that is toggled according to the expanded or collapsed state of the accordion item, by default and when collapsed the hook isn't applied, when expanded append `is-expanded` to both the **Trigger** and **Target** elements.
-- ARIA attributes having the values 'true' or 'false' are toggled according to the expanded or collapsed state of the accordion item:
-  - **Trigger:** `aria-selected` and `aria-expanded` by default and when collapsed is 'false', when expanded is 'true'.
-  - **Target:** `aria-hidden` by default and when collapsed is 'true', when expanded is 'false'.
-- The `id` attributes where the "x" is concerned should equal '1' then increment by 1 for each accordion item **Trigger** and **Target** elements e.g. 
-  - Item 1: `id="accordion-trigger-1"` / `id="accordion-target-1"`
-  - Item 2: `id="accordion-trigger-2"` / `id="accordion-target-2"`
-  - Item 3: `id="accordion-trigger-3"` / `id="accordion-target-3"`
-- The `tabindex` attribute for the **Trigger** element by default and when collapsed is `tabindex="-1"`, when expanded is `tabindex="0"`.
+- `[is-visible]` is the state hook that is toggled according to the **Target** being visible or hidden, by default and when hidden the hook isn't applied, when visible append `is-visible` to the **Container**, **Trigger**, and **Target** elements.
+- ARIA attributes having the values 'true' or 'false' are toggled according to the visible or hidden state of the **Target**:
+  - **Trigger:** `aria-expanded` by default—and when **Target** is hidden—is 'false', when expanded is 'true'.
+  - **Target:** `aria-hidden` by default and when visible is 'true', when expanded is 'false'.
+- The `id` attributes where the "x" is concerned should equal '1' then increment by 1 for each menu button **Trigger** and **Target** elements e.g. 
+  - Item 1: `id="menu-button-trigger-1"` / `id="menu-button-target-1"`
+  - Item 2: `id="menu-button-trigger-2"` / `id="menu-button-target-2"`
+  - Item 3: `id="menu-button-trigger-3"` / `id="menu-button-target-3"`
 
 
 
 
 ## Keyboard interaction
 
-The accordion takes up one tab stop in the tab order. It can be navigated with the following shortcuts:
+The menu button can be navigated with the following shortcuts:
 
-- Up or Left Arrow: move focus to the previous **Trigger**
-- Down or Right Arrow: move focus to the next **Trigger**
-- Space and Enter key: expand the currently focused **Trigger**
-- Home: move focus to the first **Trigger**
-- End: move focus to the last **Trigger**
-
-The kitchen sink: [Keyboard interaction](http://www.w3.org/TR/wai-aria-practices/#accordion).
+- Space or Enter key: with focus on the **Trigger** pressing Space or Enter will toggle the display of the **Target** whilst focus remains on the **Trigger**
+- Down Arrow key: 
+  - With focus on the **Trigger** and no **Target** visible, pressing Down Arrow key will make the **Target** visible and move focus into the **Target** and onto the first **Target** item. 
+  - With focus on the **Trigger** and the **Target** visible, pressing Down Arrow key will move focus into the **Target** onto the first menu item.
+- Up and Down Arrow keys: with focus on the **Target**, the Up and Down Arrow keys move focus within the **Target** items, "wrapping" at the top and bottom.
+- Escape key: with focus on the **Target**, pressing Escape key closes the menu and returns focus to the **Trigger**.
+- Tab key: 
+  - With focus on the **Trigger** pressing the Tab key will take the user to the next tab focusable item on the page.
+  - With focus on the **Target**, pressing the Tab key will take the user to the next tab focusable item on the page.
 
 
 
 
 ## No JavaScript
 
-If JavaScript is disabled then **ALL** of the **Trigger** elements should not be hidden. This can be achieved via `js` and `no-js` hooks (or whatever you wish to call them) being appended to the `html` element. This simple snippet of JS placed directly after the opening `head` element can be used:
-
-```js
-<script>
-  (function(html) {
-    html.className = html.className.replace( /(?:^|\s)no-js(?!\S)/g , 'js' );
-  })(document.documentElement)
-</script>
-```
-
-And your CSS might look something like:
-
-```scss
-/**
- * The accordion target.
- *
- * N.B. targeted only at JS users.
- */
-
-.js .c-accordion-target {
-  display: none;
-  
-  // When the accordion target is expanded
-  &.is-visible {
-    display: block;
-  }
-}
-```
+[TODO]
 
 
 
@@ -172,4 +166,6 @@ And your CSS might look something like:
 
 ## Examples
 
-- 
+- http://simplyaccessible.com/about/
+- http://davidtheclark.github.io/react-aria-menubutton/
+- http://mpnkhan.github.io/BootStrapExamples/a11yfixes/bs.html
