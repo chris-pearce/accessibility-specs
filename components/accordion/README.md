@@ -70,7 +70,34 @@ The kitchen sink: [Keyboard interaction](http://www.w3.org/TR/wai-aria-practices
 
 ## No JavaScript
 
-[TODO]
+If JavaScript is disabled then **ALL** of the **Trigger** elements should not be hidden. This can be achieved via `js` and `no-js` hooks (or whatever you wish to call them) being appended to the `html` element. This simple snippet of JS placed directly after the opening `head` element can be used:
+
+```js
+<script>
+  (function(html) {
+    html.className = html.className.replace( /(?:^|\s)no-js(?!\S)/g , 'js' );
+  })(document.documentElement)
+</script>
+```
+
+And your CSS might look something like:
+
+```scss
+/**
+ * The accordion target.
+ *
+ * N.B. targeted only at JS users.
+ */
+
+.js .c-accordion-target {
+  display: none;
+  
+  // When the accordion target is expanded
+  &.is-visible {
+    display: block;
+  }
+}
+```
 
 
 
@@ -141,4 +168,7 @@ The kitchen sink: [Keyboard interaction](http://www.w3.org/TR/wai-aria-practices
 
 ## Examples
 
-[TODO]
+- http://www.oaa-accessibility.org/example/35/
+- http://hanshillen.github.io/jqtest/#goto_accordion
+- http://mpnkhan.github.io/BootStrapExamples/a11yfixes/bs.html -> Accordion
+- http://codepen.io/svinkle/pen/mKfru
