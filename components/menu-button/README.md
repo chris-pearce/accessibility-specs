@@ -68,17 +68,17 @@
 - ARIA attributes having the values 'true' or 'false' are toggled according to the visible or hidden state of the **Target**:
   - **Trigger:** `aria-expanded` by default—and when **Target** is hidden—is 'false', when expanded is 'true'.
   - **Target:** `aria-hidden` by default and when visible is 'true', when expanded is 'false'.
-- The `id` attributes where the "x" is concerned should equal '1' then increment by 1 for each menu button **Trigger** and **Target** elements e.g. 
-  - Item 1: `id="menu-button-trigger-1"` / `id="menu-button-target-1"`
-  - Item 2: `id="menu-button-trigger-2"` / `id="menu-button-target-2"`
-  - Item 3: `id="menu-button-trigger-3"` / `id="menu-button-target-3"`
+- The `id` attribute on the **Target** element where the "x" is concerned should equal '1' then increment by 1 for each **Target** element e.g. 
+  - Menu button **Target** 1: `id="menu-button-target-1"`
+  - Menu button **Target** 2: `id="menu-button-target-2"`
+  - Menu button **Target** 3: `id="menu-button-target-3"`
 
 
 
 
 ## Keyboard interaction
 
-The menu button can be navigated with the following shortcuts:
+The menu button can be navigated with the following keyboard shortcuts:
 
 - Space or Enter key: with focus on the **Trigger** pressing Space or Enter will toggle the display of the **Target** whilst focus remains on the **Trigger**
 - Down Arrow key: 
