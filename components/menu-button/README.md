@@ -7,9 +7,9 @@
 
 >> A menu button is a push button that is used to invoke a menu. It appears as a normal button typically with a downward pointing arrow or triangle as a visual cue that it triggers the display of a menu.
 
-Menu buttons are used in situations where authors want to provide a single menu without having to construct a complete menu bar.
+>> Menu buttons are used in situations where authors want to provide a single menu without having to construct a complete menu bar.
 
-When presenting the menu, ensure that it is completely visible on screen.
+>> When presenting the menu, ensure that it is completely visible on screen.
 <br>
 —<http://www.w3.org/TR/wai-aria-practices/#menubutton>
 
