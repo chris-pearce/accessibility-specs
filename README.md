@@ -15,6 +15,7 @@ It covers things like:
 And will include components such as:
 
 - [Accordion](components/accordion/README.md)
+- [Menu Button](components/menu-button/README.md)
 - Autocomplete
 - Carousel
 - Datepicker
