@@ -33,6 +33,7 @@ label appropriately. Or create a
 
 - [Components](components)
   - [Accordion](components/accordion/README.md)
+  - [Menu Button](components/menu-button/README.md)
 
 ## Noteworthy
 
