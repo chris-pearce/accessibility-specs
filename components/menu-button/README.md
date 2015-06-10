@@ -73,7 +73,11 @@
   - Menu button **Target** 2: `id="menu-button-target-2"`
   - Menu button **Target** 3: `id="menu-button-target-3"`
 
+**N.B.** if the menu is for navigational purposes then do not apply the following ARIA roles:
 
+- `role="menu"`
+- `role="menuitem"`
+- `role="presentation"`
 
 
 ## Keyboard interaction
@@ -95,7 +99,15 @@ The menu button can be navigated with the following keyboard shortcuts:
 
 ## No JavaScript
 
-[TODO]
+If JavaScript is disabled then the component will still work by using the CSS `:target` selector to open the drop down menu as the **Trigger** and **Target** are connected via the `id` of the **Target** by the **Trigger** referencing that `id` in its `href` value. 
+
+To close the **Target** this link is provided at the bottom of the **Target** which is only visible to users with JavaScript disabled:
+
+```html
+<li role="presentation" class="u-hide-if-js-is-on">
+  <a href="#">[X] close menu</a>
+</li>
+```
 
 
 
