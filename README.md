@@ -73,5 +73,6 @@ label appropriately. Or create a
 - [Colour Contrast Checker](http://leaverou.github.io/contrast-ratio/)
 - [aViewer](http://www.paciellogroup.com/blog/2013/03/aviewer-2013/)
 - [HTML_CodeSniffer](http://squizlabs.github.io/HTML_CodeSniffer/)
+- [Accessibility visualization toolkit](http://khan.github.io/tota11y/)
 
 *Web accessibility evaluation tools can be very helpful; however, they do not replace the need for human evaluation. Evaluating for accessibility requires knowledgeable human judgment. No tool alone can determine if a site meets accessibility guidelines. (However, a tool can determine if a site does not meet accessibility guidelines.) Testing tools can increase the efficiency of evaluation. Experience with assistive technologies is required to evaluate for usable accessibility.*
